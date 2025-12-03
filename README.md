@@ -29,7 +29,18 @@ To construct the `AoPS-Instruct` dataset:
    ```
    This will produce a raw jsonlines file: out/items_raw.jl to be processed in the next steps.
 
-   Note: To perform a test run to make sure the whole pipeline is working, in the crawling script, you can add the `test_mode` option to crawl only 1000 datapoints:
+   **Date Range Options**: You can specify the date range for crawling:
+   ```bash
+   # Crawl data from 2025 only
+   bash scripts/crawl_raw.sh --start_date "2025-01" --end_date "2025-12"
+
+   # Crawl data from a custom range
+   bash scripts/crawl_raw.sh --start_date "2020-01" --end_date "2025-12"
+   ```
+
+   The default configuration crawls **2025 data** (`START_DATE="2025-01"`, `END_DATE="2025-12"`).
+
+   **Test Mode**: To perform a test run to make sure the whole pipeline is working, you can add the `test_mode` option to crawl only 1000 datapoints:
    ```bash
    bash scripts/crawl_raw.sh --test_mode True
    ```
