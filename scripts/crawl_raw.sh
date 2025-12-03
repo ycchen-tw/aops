@@ -3,8 +3,8 @@ set -e  # Exit if any command fails
 
 # Default values
 TEST_MODE="False"
-START_DATE="2000-01"
-END_DATE="2024-12"
+START_DATE="2025-01"
+END_DATE="2025-12"
 ITEMS_RAW_PATH="../out/items_raw.jl"
 ITEMS_RAW_FILTERED_PATH="../out/items_filtered.jl"
 

@@ -9,7 +9,7 @@ import datetime
 
 class AOPSSpider(scrapy.Spider):
         name = 'aops'
-        MAX_TOPICS = 3_600_000
+        MAX_TOPICS = 5_000_000
         # start_urls = [f'https://artofproblemsolving.com/community/c6h{i}' for i in range(1, 500)]
 
         def __init__(self, total_spiders=None, spider_idx=None, start_date='2000-01', test_mode=False, **kwargs):
