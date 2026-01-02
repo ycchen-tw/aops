@@ -49,6 +49,36 @@ To construct the `AoPS-Instruct` dataset:
 
    This will process the raw crawled data and create the final training dataset in the specified format. The script supports resuming, so if interrupted, it will pick up where it left off.
 
+## 2025 Data Collection
+
+To crawl 2025 AoPS data specifically, use the simplified crawler:
+
+```bash
+python3 crawl_2025_simple.py --start 3470000 --end 3600000 --delay 0.2 --output out/items_raw_2025.jl
+```
+
+**Parameters:**
+- `--start`: Starting topic ID (2025 topics start around 3470000)
+- `--end`: Ending topic ID
+- `--delay`: Delay between requests in seconds (default: 0.3)
+- `--output`: Output file path
+
+The crawler supports resuming from where it left off if interrupted.
+
+### Pre-crawled 2025 Data
+
+Pre-crawled 2025 data is available in the `claude/parse-2025-qa-w6Pfx` branch:
+
+```bash
+git checkout claude/parse-2025-qa-w6Pfx
+cat out/items_raw_2025_part_*.gz | gunzip > out/items_raw_2025.jl
+```
+
+**Statistics:**
+- 34,077 successful topics crawled
+- Topic ID range: 3470000 - 3600000
+- Data size: ~1.4GB uncompressed, ~144MB compressed
+
 ## Processed Data
 We provide the full code for reproducing AoPS-Ins and LiveAoPSBench, making it easy for you to explore and experiment with these tools. Processed data is available through a community reproduction effort, accessible here: [Hugging Face Dataset](https://huggingface.co/datasets/DeepStudentLlama/AoPS-Instruct). While we encourage the use of this third-party dataset, please be aware that we disclaim any liability for its use and any associated issues that may arise.
 
